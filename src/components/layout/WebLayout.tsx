@@ -1,16 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { colors, WebGlobalStyles } from "../../style.config";
 
-export const WebLayout = (props) => {
-  const { children } = props;
-
+export const WebLayout = ({ children }: WebLayoutProps): JSX.Element => {
   return (
     <Wrapper>
-      <WebGlobalStyles /> {children}
+      <WebGlobalStyles />
+      {children}
     </Wrapper>
   );
 };
+
+export interface WebLayoutProps {
+  children: ReactNode;
+}
 
 const Wrapper = styled.div`
   width: 100vw;
