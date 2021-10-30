@@ -30,13 +30,15 @@ const Wrapper = styled.button<ButtonProps>`
   border-width: 0.1rem;
   border-radius: 0.5rem;
 
-  ${(props) =>
-    props.shadow
-      ? css`
-          box-shadow: 0.1rem 0.1rem 8px 0px
-            ${props.primary ? colors.primary : colors.secondary};
-        `
-      : ""};
+  ${(props) => {
+    if (!props.shadow) return "";
+
+    const color = props.primary ? colors.primary : colors.secondary;
+
+    return css`
+      box-shadow: 0.1rem 0.1rem 8px 0px ${color};
+    `;
+  }};
 
   :hover {
     transform: translateY(-5%);
