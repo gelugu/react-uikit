@@ -42,5 +42,9 @@ const Wrapper = styled.button<ButtonProps>`
     transform: translateY(-5%);
   }
 
+  :active {
+    transform: translateY(-20%);
+  }
+
   transition: transform ${animationSpeed} ease-in-out;
 `;
