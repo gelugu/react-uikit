@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
 import { animationSpeed } from "../../style.config";
+import { View, ViewProps } from "./View";
 
 export const FloatView = (props: FloatViewProps): JSX.Element => {
   const { children } = props;
@@ -16,17 +17,17 @@ export const FloatView = (props: FloatViewProps): JSX.Element => {
 
   useEffect(() => setStyles({ transform: "translate(0, 0)" }), []);
 
-  return <Wrapper style={styles}>{children}</Wrapper>;
+  return (
+    <Wrapper style={styles}>
+      <View {...props}>{children}</View>
+    </Wrapper>
+  );
 };
 
-export interface FloatViewProps {
+export interface FloatViewProps extends ViewProps {
   children: ReactNode;
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: ${animationSpeed} ease-in-out;
+  transition: transform ${animationSpeed} ease-in-out;
 `;
