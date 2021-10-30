@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const colors = {
   back: "#3d405b",
   text: "#f4f1de",
-  primary: "#81b29a",
-  secondary: "#f2cc8f",
+  primary: "#f2cc8f",
+  secondary: "#81b29a",
   warn: "#e07a5f",
 };
 
@@ -15,5 +15,9 @@ export const WebGlobalStyles = createGlobalStyle`
 
     background-color: ${colors.back};
     color: ${colors.text};
+
+    font-size: 1rem;
   }
 `;
+
+export const animationSpeed = "200ms";

@@ -1,5 +1,6 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
+import { animationSpeed } from "../../style.config";
 
 export const FloatView = (props: FloatViewProps): JSX.Element => {
   const { children } = props;
@@ -27,5 +28,5 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  transition: 200ms ease-in-out;
+  transition: ${animationSpeed} ease-in-out;
 `;
