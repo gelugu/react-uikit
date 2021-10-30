@@ -9,23 +9,14 @@ const App = () => {
     <WebLayout>
       <FloatView>
         <ButtonsContainer>
-          <Button />
-          <Button />
-          <Button />
+          <Button>aaaaaaaaa</Button>
+          <Button primary>bbb</Button>
+          <Button shadow={false} />
         </ButtonsContainer>
-      </FloatView>
-      <FloatView>
         <ButtonsContainer>
-          <Button />
-          <Button />
-          <Button />
-        </ButtonsContainer>
-      </FloatView>
-      <FloatView>
-        <ButtonsContainer>
-          <Button />
-          <Button />
-          <Button />
+          <Button>aaaaaaaaa</Button>
+          <Button primary>bbb</Button>
+          <Button shadow={false} />
         </ButtonsContainer>
       </FloatView>
     </WebLayout>
