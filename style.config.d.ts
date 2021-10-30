@@ -6,3 +6,4 @@ export declare const colors: {
     warn: string;
 };
 export declare const WebGlobalStyles: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
+export declare const animationSpeed = "200ms";
