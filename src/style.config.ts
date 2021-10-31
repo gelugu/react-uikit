@@ -8,7 +8,15 @@ export const colors = {
   warn: "#e07a5f",
 };
 
+export enum Fonts {
+  ZenAntiqueSoft = "'Zen Antique Soft', serif",
+  Ubuntu = "'Ubuntu', sans-serif",
+  SourceCodePro = "'Zen Antique Soft', serif",
+}
+
 export const WebGlobalStyles = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,400;0,700;1,400&family=Zen+Antique+Soft&display=swap');
+
   * {
     margin: 0;
     padding: 0;
@@ -17,6 +25,8 @@ export const WebGlobalStyles = createGlobalStyle`
     color: ${colors.text};
 
     font-size: 1rem;
+
+    font-family: ${Fonts.ZenAntiqueSoft};
   }
 `;
 
