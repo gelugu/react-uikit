@@ -26,6 +26,4 @@ const Wrapper = styled.div`
 
   background-color: ${colors.back};
   color: ${colors.text};
-
-  overflow: hidden;
 `;

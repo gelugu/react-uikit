@@ -27,6 +27,16 @@ export const WebGlobalStyles = createGlobalStyle`
     font-size: 1rem;
 
     font-family: ${Fonts.ZenAntiqueSoft};
+
+    overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+    ::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 0.5rem ${colors.secondary};
+      border-radius: 0.5rem;
+    }
   }
 `;
 
