@@ -66,6 +66,13 @@ const App = () => {
           <Button />
           <Button />
         </View>
+        <View
+          border
+          direction={ViewDirection.row}
+          headerSize={HeaderSize.small}
+        >
+          View withou header
+        </View>
       </FloatView>
     </WebLayout>
   );
