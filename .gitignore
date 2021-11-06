@@ -9,3 +9,6 @@ lib
 
 # ts
 tsconfig.tsbuildinfo
+
+macos
+.DS_Store
