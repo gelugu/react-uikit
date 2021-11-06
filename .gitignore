@@ -3,6 +3,12 @@ node_modules
 
 # build
 dist
+lib
+*.tsbuildinfo
+.rollup.cache
 
 # ts
 tsconfig.tsbuildinfo
+
+macos
+.DS_Store

@@ -2,11 +2,15 @@
   "name": "@gelugu/react-uikit",
   "version": "0.1.0",
   "description": "React UiKit library from gelugu",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "types": "lib/lib.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --port 3000",
     "build": "npx webpack",
-    "test": "npm run test",
+    "build-lib": "rollup -c",
     "lint": "tsc --noEmit && eslint \"**/*.tsx\" --quiet --fix"
   },
   "pre-commit": [
@@ -26,12 +30,12 @@
   "bugs": {
     "url": "https://github.com/gelugu/react-uikit/issues"
   },
-  "homepage": "https://github.com/gelugu/react-uikit#readme",
+  "homepage": "https://gelugu.github.io/react-uikit",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
-    "@babel/preset-react": "^7.14.5",
-    "@types/node": "^16.11.6",
+    "@babel/preset-react": "^7.16.0",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@types/styled-components": "^5.1.15",
@@ -41,20 +45,24 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "html-webpack-plugin": "^5.4.0",
-    "live-server": "^1.2.1",
     "pre-commit": "^1.2.2",
     "prettier": "2.4.1",
-    "ts-loader": "^9.2.6",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4",
-    "webpack": "^5.59.1",
-    "webpack-cli": "^4.9.1"
-  },
-  "dependencies": {
-    "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rollup": "^2.59.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
     "styled-components": "^5.3.3",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.4",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   }
 }
