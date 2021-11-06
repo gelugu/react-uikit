@@ -6,8 +6,10 @@ export const Button = (props: ButtonProps): JSX.Element => {
   const { children, primary = false, shadow = true } = props;
 
   return (
-    <Wrapper primary={primary} shadow={shadow}>
-      {children}
+    <Wrapper>
+      <Item primary={primary} shadow={shadow}>
+        {children}
+      </Item>
     </Wrapper>
   );
 };
@@ -18,8 +20,25 @@ export interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   shadow?: boolean;
 }
 
-const Wrapper = styled.button<ButtonProps>`
-  padding: 0.5rem;
+const Wrapper = styled.div`
+  padding: 0.2rem;
+  padding-top: 0.5rem;
+
+  :hover {
+    button {
+      transform: translateY(-0.1rem);
+    }
+  }
+
+  :active {
+    transform: translateY(-0.3rem);
+  }
+
+  transition: transform ${animationSpeed} ease-in-out;
+`;
+
+const Item = styled.button<ButtonProps>`
+  padding: 0.3rem;
 
   min-height: 3rem;
   min-width: 3rem;
@@ -36,17 +55,7 @@ const Wrapper = styled.button<ButtonProps>`
     const color = props.primary ? colors.primary : colors.secondary;
 
     return css`
-      box-shadow: 0.1rem 0.1rem 8px 0px ${color};
+      box-shadow: 0.1rem 0.1rem 0.2rem 0px ${color};
     `;
   }};
-
-  :hover {
-    transform: translateY(-5%);
-  }
-
-  :active {
-    transform: translateY(-20%);
-  }
-
-  transition: transform ${animationSpeed} ease-in-out;
 `;
