@@ -4,13 +4,13 @@ import { Button, ButtonsContainer } from "./components/button";
 import { HeaderSize } from "./components/header";
 import { WebLayout } from "./components/layout";
 import { FloatView } from "./components/view";
-import { View, ViewDirection } from "./components/view/View";
+import { View } from "./components/view/View";
 import { colors } from "./style.config";
 
 const App = () => {
   return (
     <WebLayout>
-      <FloatView border direction={ViewDirection.column} header="Buttons">
+      <FloatView border direction="rows" header="Buttons">
         <ButtonsContainer>
           <Button>Default</Button>
           <Button />
@@ -24,9 +24,9 @@ const App = () => {
           </Button>
         </ButtonsContainer>
       </FloatView>
-      <FloatView border direction={ViewDirection.row} header="Views">
+      <FloatView border direction="columns" header="Views">
         <View
-          direction={ViewDirection.column}
+          direction="columns"
           border
           header="column view"
           headerSize={HeaderSize.small}
@@ -36,7 +36,7 @@ const App = () => {
           <Button />
         </View>
         <View
-          direction={ViewDirection.row}
+          direction="rows"
           border
           header="row view"
           headerSize={HeaderSize.small}
@@ -47,7 +47,7 @@ const App = () => {
         </View>
         <View
           border
-          direction={ViewDirection.row}
+          direction="rows"
           header="color"
           headerColor={colors.primary}
           headerSize={HeaderSize.small}
@@ -57,7 +57,7 @@ const App = () => {
           <Button />
         </View>
         <View
-          direction={ViewDirection.row}
+          direction="rows"
           header="without border"
           headerColor={colors.primary}
           headerSize={HeaderSize.small}
@@ -68,7 +68,7 @@ const App = () => {
         </View>
         <View
           border
-          direction={ViewDirection.row}
+          direction="rows"
           headerSize={HeaderSize.small}
         >
           View withou header

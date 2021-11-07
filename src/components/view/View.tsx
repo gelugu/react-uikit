@@ -7,7 +7,7 @@ import { Header, HeaderSize } from "../header";
 export const View = (props: ViewProps): JSX.Element => {
   const {
     children,
-    direction = ViewDirection.column,
+    direction = "columns",
     border = false,
     header,
     headerSize = HeaderSize.medium,
@@ -30,7 +30,7 @@ export const View = (props: ViewProps): JSX.Element => {
 export interface ViewProps extends InputHTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 
-  direction?: ViewDirection;
+  direction?: "columns" | "rows";
 
   border?: boolean;
   borderColor?: string;
@@ -39,11 +39,6 @@ export interface ViewProps extends InputHTMLAttributes<HTMLDivElement> {
   headerSize?: HeaderSize;
   headerColor?: string;
   headerLineType?: LineType;
-}
-
-export enum ViewDirection {
-  column = "column",
-  row = "row",
 }
 
 const Wrapper = styled.div<ViewProps>`
@@ -64,6 +59,14 @@ const Wrapper = styled.div<ViewProps>`
 `;
 
 const Content = styled.div<ViewProps>`
-  display: flex;
-  flex-direction: ${(props) => props.direction};
+  display: grid;
+
+  ${(props) => css`
+    grid-template-${props.direction}: repeat(
+    ${React.Children.count(props.children)},
+      1fr
+    );
+  `}
+
+  justify-content: flex-start;
 `;

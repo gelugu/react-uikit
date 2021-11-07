@@ -8,4 +8,12 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
+  rules: {
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        allowSingleExtends: false,
+      },
+    ],
+  },
 };

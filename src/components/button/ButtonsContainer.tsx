@@ -1,16 +1,15 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { ViewDirection } from "../view/View";
 
 export const ButtonsContainer = (props: ButtonsContainerProps): JSX.Element => {
-  const { children, direction = ViewDirection.row } = props;
+  const { children, direction = "rows" } = props;
 
   return <Wrapper direction={direction}>{children}</Wrapper>;
 };
 
 export interface ButtonsContainerProps {
   children: ReactNode;
-  direction?: ViewDirection;
+  direction?: "columns" | "rows";
 }
 
 const Wrapper = styled.div<ButtonsContainerProps>`

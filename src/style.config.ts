@@ -14,6 +14,8 @@ export enum Fonts {
   SourceCodePro = "'Zen Antique Soft', serif",
 }
 
+export const animationSpeed = "200ms";
+
 export const WebGlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,400;0,700;1,400&family=Zen+Antique+Soft&display=swap');
 
@@ -37,7 +39,7 @@ export const WebGlobalStyles = createGlobalStyle`
       box-shadow: inset 0 0 0.5rem ${colors.secondary};
       border-radius: 0.5rem;
     }
+
+    transition: all ${animationSpeed} ease-in-out;
   }
 `;
-
-export const animationSpeed = "200ms";

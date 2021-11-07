@@ -28,6 +28,4 @@ export interface FloatViewProps extends ViewProps {
   children: ReactNode;
 }
 
-const Wrapper = styled.div`
-  transition: transform ${animationSpeed} ease-in-out;
-`;
+const Wrapper = styled.div``;

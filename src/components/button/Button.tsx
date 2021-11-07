@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, ReactNode } from "react";
 import styled, { css } from "styled-components";
-import { animationSpeed, colors } from "../../style.config";
+import { colors } from "../../style.config";
 
 export const Button = (props: ButtonProps): JSX.Element => {
   const { children, primary = false, shadow = true } = props;
@@ -21,24 +21,21 @@ export interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Wrapper = styled.div`
-  padding: 0.2rem;
-  padding-top: 0.5rem;
-
   :hover {
     button {
-      transform: translateY(-0.1rem);
+      transform: scale(0.95);
     }
   }
 
   :active {
-    transform: translateY(-0.3rem);
+    button {
+      transform: scale(0.8);
+    }
   }
-
-  transition: transform ${animationSpeed} ease-in-out;
 `;
 
 const Item = styled.button<ButtonProps>`
-  padding: 0.3rem;
+  padding: 0.5rem;
 
   min-height: 3rem;
   min-width: 3rem;
@@ -56,6 +53,7 @@ const Item = styled.button<ButtonProps>`
 
     return css`
       box-shadow: 0.1rem 0.1rem 0.2rem 0px ${color};
+      margin: 0.2rem;
     `;
   }};
 `;
