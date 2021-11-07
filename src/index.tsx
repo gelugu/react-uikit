@@ -66,11 +66,7 @@ const App = () => {
           <Button />
           <Button />
         </View>
-        <View
-          border
-          direction="rows"
-          headerSize={HeaderSize.small}
-        >
+        <View border direction="rows" headerSize={HeaderSize.small}>
           View withou header
         </View>
       </FloatView>
