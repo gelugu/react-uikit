@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { Button, ButtonsContainer } from "./components/button";
+import { Input } from "./components/input";
 import { HeaderSize } from "./components/header";
 import { WebLayout } from "./components/layout";
 import { FloatView } from "./components/view";
@@ -10,6 +11,9 @@ import { colors } from "./style.config";
 const App = () => {
   return (
     <WebLayout>
+      <FloatView border direction="rows" header="Inputs">
+        <Input />
+      </FloatView>
       <FloatView border direction="rows" header="Buttons">
         <ButtonsContainer>
           <Button>Default</Button>
