@@ -4,7 +4,9 @@ import { HeaderSize } from "../header";
 export declare const View: (props: ViewProps) => JSX.Element;
 export interface ViewProps extends InputHTMLAttributes<HTMLDivElement> {
     children?: ReactNode;
-    direction?: "columns" | "rows";
+    direction?: "column" | "row";
+    positionX?: "start" | "center" | "end";
+    positionY?: "start" | "center" | "end";
     border?: boolean;
     borderColor?: string;
     header?: string;

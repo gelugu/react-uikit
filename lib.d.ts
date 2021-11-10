@@ -1,3 +1,4 @@
+export * from "./components/animation";
 export * from "./components/blocks";
 export * from "./components/button";
 export * from "./components/input";
