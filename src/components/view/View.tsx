@@ -7,7 +7,9 @@ import { Header, HeaderSize } from "../header";
 export const View = (props: ViewProps): JSX.Element => {
   const {
     children,
-    direction = "columns",
+    direction = "column",
+    positionX = "start",
+    positionY = "start",
     border = false,
     header,
     headerSize = HeaderSize.medium,
@@ -22,7 +24,13 @@ export const View = (props: ViewProps): JSX.Element => {
           {header}
         </Header>
       )}
-      <Content direction={direction}>{children}</Content>
+      <Content
+        direction={direction}
+        positionX={positionX}
+        positionY={positionY}
+      >
+        {children}
+      </Content>
     </Wrapper>
   );
 };
@@ -30,7 +38,9 @@ export const View = (props: ViewProps): JSX.Element => {
 export interface ViewProps extends InputHTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 
-  direction?: "columns" | "rows";
+  direction?: "column" | "row";
+  positionX?: "start" | "center" | "end";
+  positionY?: "start" | "center" | "end";
 
   border?: boolean;
   borderColor?: string;
@@ -60,13 +70,7 @@ const Wrapper = styled.div<ViewProps>`
 
 const Content = styled.div<ViewProps>`
   display: grid;
-
-  ${(props) => css`
-    grid-template-${props.direction}: repeat(
-    ${React.Children.count(props.children)},
-      1fr
-    );
-  `}
-
-  justify-content: flex-start;
+  grid-auto-flow: ${(props) => props.direction};
+  justify-items: ${(props) => props.positionX};
+  align-items: ${(props) => props.positionY};
 `;
