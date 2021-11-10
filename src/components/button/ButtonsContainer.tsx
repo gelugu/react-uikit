@@ -2,14 +2,14 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 export const ButtonsContainer = (props: ButtonsContainerProps): JSX.Element => {
-  const { children, direction = "rows" } = props;
+  const { children, direction = "row" } = props;
 
   return <Wrapper direction={direction}>{children}</Wrapper>;
 };
 
 export interface ButtonsContainerProps {
   children: ReactNode;
-  direction?: "columns" | "rows";
+  direction?: "column" | "row";
 }
 
 const Wrapper = styled.div<ButtonsContainerProps>`

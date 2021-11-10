@@ -28,7 +28,7 @@ export const WebGlobalStyles = createGlobalStyle`
 
     font-size: 1rem;
 
-    font-family: ${Fonts.ZenAntiqueSoft};
+    font-family: ${Fonts.Ubuntu};
 
     overflow-x: hidden;
 
@@ -39,7 +39,5 @@ export const WebGlobalStyles = createGlobalStyle`
       box-shadow: inset 0 0 0.5rem ${colors.secondary};
       border-radius: 0.5rem;
     }
-
-    transition: all ${animationSpeed} ease-in-out;
   }
 `;

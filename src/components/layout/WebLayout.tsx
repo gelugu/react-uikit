@@ -1,29 +1,27 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { ViewProps } from "../view";
+import styled from "styled-components";
+import { View, ViewProps } from "../view";
 import { colors, WebGlobalStyles } from "../../style.config";
 
 export const WebLayout = (props: ViewProps): JSX.Element => {
-  const { children, direction = "columns" } = props;
+  const {
+    children,
+    direction = "row",
+    positionX = "center",
+    positionY = "center",
+  } = props;
 
   return (
-    <Wrapper direction={direction}>
+    <Wrapper direction={direction} positionX={positionX} positionY={positionY}>
       <WebGlobalStyles />
       {children}
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div<ViewProps>`
+const Wrapper = styled(View)`
   width: 100vw;
   height: 100vh;
-
-  ${(props) => css`
-    grid-template-${props.direction}: repeat(
-      ${React.Children.count(props.children)},
-      1fr
-    );
-  `}
 
   background-color: ${colors.back};
 `;
