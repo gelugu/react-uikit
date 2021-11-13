@@ -130,7 +130,7 @@
   align-items: ${e=>e.positionY};
 
   background-color: ${l.colors.back};
-`},335:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n),Object.defineProperty(e,r,{enumerable:!0,get:function(){return t[n]}})}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__exportStar||function(e,t){for(var n in e)"default"===n||Object.prototype.hasOwnProperty.call(t,n)||r(t,e,n)};Object.defineProperty(t,"__esModule",{value:!0}),a(n(41),t)},788:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n),Object.defineProperty(e,r,{enumerable:!0,get:function(){return t[n]}})}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),o=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t},l=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0}),t.View=void 0;const i=l(n(294)),u=o(n(163)),s=n(331),c=n(44),f=n(802);t.View=e=>{const{children:t,direction:n="column",positionX:r="start",positionY:a="start",border:o=!1,header:l,headerSize:u=f.HeaderSize.medium,headerColor:h=s.colors.text,headerLineType:m=c.LineType.solid}=e;return i.default.createElement(d,{border:o,borderColor:h},l&&i.default.createElement(f.Header,{size:u,color:h,lineType:m},l),i.default.createElement(p,{direction:n,positionX:r,positionY:a},t))};const d=u.default.div`
+`},335:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n),Object.defineProperty(e,r,{enumerable:!0,get:function(){return t[n]}})}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__exportStar||function(e,t){for(var n in e)"default"===n||Object.prototype.hasOwnProperty.call(t,n)||r(t,e,n)};Object.defineProperty(t,"__esModule",{value:!0}),a(n(41),t)},788:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n),Object.defineProperty(e,r,{enumerable:!0,get:function(){return t[n]}})}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),o=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t},l=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0}),t.View=void 0;const i=l(n(294)),u=o(n(163)),s=n(331),c=n(44),f=n(802);t.View=e=>{const{children:t,direction:n="column",positionX:r="start",positionY:a="start",border:o=!1,borderColor:l,shadow:u=!1,header:h,headerSize:m=f.HeaderSize.medium,headerColor:g=s.colors.text,headerLineType:v=c.LineType.solid}=e;return i.default.createElement(d,{border:!!l||o,borderColor:l||g,shadow:u},h&&i.default.createElement(f.Header,{size:m,color:g,lineType:v},h),i.default.createElement(p,{direction:n,positionX:r,positionY:a},t))};const d=u.default.div`
   margin: 1rem;
 
   ${e=>e.border?u.css`
@@ -140,7 +140,14 @@
       border-style: solid;
       border-width: 0.2rem;
       border-radius: 1rem;
+
+      min-width: 1rem;
+      min-height: 1rem;
     `:""}
+
+  ${e=>e.shadow&&u.css`
+        box-shadow: 0 0 0.3rem ${e.borderColor};
+      `};
 `,p=u.default.div`
   display: grid;
   grid-auto-flow: ${e=>e.direction};

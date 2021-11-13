@@ -9,6 +9,7 @@ export interface ViewProps extends InputHTMLAttributes<HTMLDivElement> {
     positionY?: "start" | "center" | "end";
     border?: boolean;
     borderColor?: string;
+    shadow?: boolean;
     header?: string;
     headerSize?: HeaderSize;
     headerColor?: string;
