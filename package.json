@@ -1,6 +1,6 @@
 {
   "name": "@gelugu/react-uikit",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "React UiKit library from gelugu",
   "main": "lib/index.js",
   "types": "lib/lib.d.ts",

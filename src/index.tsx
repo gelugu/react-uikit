@@ -10,70 +10,16 @@ import { FloatAnimation, OpacityAnimation } from "./components/animation";
 
 const App = () => {
   return (
-    <WebLayout positionX="start">
-      <View direction="row" header="Inputs">
-        <FloatAnimation>
-          <Input label="simple input" labelPosition="up" />
-        </FloatAnimation>
-        <Input label="left label" labelPosition="left" />
-      </View>
-      <View direction="row" header="Buttons">
-        <OpacityAnimation>
-          <ButtonsContainer>
-            <Button>Default</Button>
-            <Button />
-            <Button shadow={false}>Without shadow</Button>
-          </ButtonsContainer>
-        </OpacityAnimation>
-        <FloatAnimation>
-          <ButtonsContainer>
-            <Button primary>Primary</Button>
-            <Button primary />
-            <Button primary shadow={false}>
-              Without shadow
-            </Button>
-          </ButtonsContainer>
-        </FloatAnimation>
-      </View>
-      <View direction="column" header="Views">
-        <View
-          direction="column"
-          header="column view"
-          headerSize={HeaderSize.small}
-        >
-          <Button />
-          <Button />
-          <Button />
-        </View>
-        <View direction="row" header="row view" headerSize={HeaderSize.small}>
-          <Button />
-          <Button />
-          <Button />
-        </View>
-        <View
-          direction="row"
-          header="color"
-          headerColor={colors.primary}
-          headerSize={HeaderSize.small}
-        >
-          <Button />
-          <Button />
-          <Button />
-        </View>
-        <View
-          direction="row"
-          header="with border"
-          border
-          headerSize={HeaderSize.small}
-        >
-          <Button />
-          <Button />
-          <Button />
-        </View>
-        <View direction="row" headerSize={HeaderSize.small}>
-          View withou header
-        </View>
-      </View>
+    <WebLayout direction="column" positionX="center" positionY="center">
+      <FloatAnimation>
+        <Input label="simple input" labelPosition="up" />
+      </FloatAnimation>
+      <FloatAnimation>
+        <Button>:</Button>
+      </FloatAnimation>
+      <FloatAnimation>
+        <Input label="simple input" labelPosition="up" />
+      </FloatAnimation>
     </WebLayout>
   );
 };
