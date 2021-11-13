@@ -11,6 +11,7 @@ export const View = (props: ViewProps): JSX.Element => {
     positionX = "start",
     positionY = "start",
     border = false,
+    borderColor,
     header,
     headerSize = HeaderSize.medium,
     headerColor = colors.text,
@@ -18,7 +19,10 @@ export const View = (props: ViewProps): JSX.Element => {
   } = props;
 
   return (
-    <Wrapper border={border} borderColor={headerColor}>
+    <Wrapper
+      border={!!borderColor || border}
+      borderColor={borderColor || headerColor}
+    >
       {header && (
         <Header size={headerSize} color={headerColor} lineType={headerLineType}>
           {header}
