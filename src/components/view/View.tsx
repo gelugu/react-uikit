@@ -11,6 +11,8 @@ export const View = (props: ViewProps): JSX.Element => {
     positionX = "start",
     positionY = "start",
     border = false,
+    borderColor,
+    shadow = false,
     header,
     headerSize = HeaderSize.medium,
     headerColor = colors.text,
@@ -18,7 +20,11 @@ export const View = (props: ViewProps): JSX.Element => {
   } = props;
 
   return (
-    <Wrapper border={border} borderColor={headerColor}>
+    <Wrapper
+      border={!!borderColor || border}
+      borderColor={borderColor || headerColor}
+      shadow={shadow}
+    >
       {header && (
         <Header size={headerSize} color={headerColor} lineType={headerLineType}>
           {header}
@@ -45,6 +51,8 @@ export interface ViewProps extends InputHTMLAttributes<HTMLDivElement> {
   border?: boolean;
   borderColor?: string;
 
+  shadow?: boolean;
+
   header?: string;
   headerSize?: HeaderSize;
   headerColor?: string;
@@ -64,8 +72,20 @@ const Wrapper = styled.div<ViewProps>`
       border-style: solid;
       border-width: 0.2rem;
       border-radius: 1rem;
+
+      min-width: 1rem;
+      min-height: 1rem;
     `;
   }}
+
+  ${(props) => {
+    return (
+      props.shadow &&
+      css`
+        box-shadow: 0 0 0.3rem ${props.borderColor};
+      `
+    );
+  }};
 `;
 
 const Content = styled.div<ViewProps>`
